@@ -8,3 +8,4 @@ unstructured_inference
 libmagic
 tesseract
 pinecone-client
+openai==0.28
