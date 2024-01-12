@@ -3,10 +3,7 @@ from sentence_transformers import SentenceTransformer
 import pinecone
 import streamlit as st
 
-headers={
-  "authorization":st.secrets["openai_api_key"],
-  "content-type": "application/json"
-}
+
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 pinecone.init(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381', environment='gcp-starter')
