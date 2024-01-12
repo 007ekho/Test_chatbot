@@ -14,8 +14,10 @@ from auxiliary_functions import *
 import langchain
 import streamlit as st
 
-
-
+headers={
+  "authorization":st.secrets["openai_api_key"],
+  "content-type": "application/json"
+}
 st.header('welcome to my chat bot')
 st.write("")
 
@@ -25,7 +27,7 @@ if 'requests' not in st.session_state:
     st.session_state['requests']=[]
 
 
-llm = ChatOpenAI(model_name= "gpt-3.5-turbo", openai_api_key="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")
+llm = ChatOpenAI(model_name= "gpt-3.5-turbo", openai_api_key)
 
 if 'buffer_memory' not in st.session_state:
     st.session_state.buffer_memory = ConversationBufferWindowMemory(k=3,return_messages=True)
