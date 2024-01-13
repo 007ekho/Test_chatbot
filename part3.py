@@ -13,7 +13,8 @@ from auxiliary_functions import *
 
 import langchain
 import streamlit as st
-
+virtualenv .venv
+source .venv/bin/activate
 
 st.header('welcome to my chat bot')
 st.write("")
