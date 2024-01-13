@@ -13,8 +13,8 @@ from auxiliary_functions import *
 
 import langchain
 import streamlit as st
-virtualenv .venv
-source .venv/bin/activate
+import os
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 st.header('welcome to my chat bot')
 st.write("")
