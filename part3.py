@@ -17,7 +17,7 @@ import streamlit as st
 # os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 openai.api_key = st.secrets.OPENAI_API_KEY
 
-st.header('welcome to my chat bot')
+st.header('Welcome, My name is Javis')
 st.write("")
 
 if 'responses' not in st.session_state:
@@ -31,7 +31,7 @@ llm = ChatOpenAI(model_name= "gpt-3.5-turbo",api_key=openai.api_key)
 if 'buffer_memory' not in st.session_state:
     st.session_state.buffer_memory = ConversationBufferWindowMemory(k=3,return_messages=True)
 
-system_msg_template = SystemMessagePromptTemplate.from_template(template="""Answer the question as truthfully as possible using the provided context, 
+system_msg_template = SystemMessagePromptTemplate.from_template(template="""Your name is Javis.Answer the question as truthfully as possible using the provided context, 
 and if the answer is not contained within the text below, say 'I don't know'""")
 human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
 prompt_template = ChatPromptTemplate.from_messages([system_msg_template, MessagesPlaceholder(variable_name="history"), human_msg_template])
