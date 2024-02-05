@@ -25,7 +25,9 @@ index = pc.Index('ai-assistant')
 
 def find_match(input):
     input_em = model.encode(input).tolist()
-    result = index.query(input_em, top_k=2, includeMetadata=True)
+    # result = index.query(input_em, top_k=2, includeMetadata=True)
+    result = index.query(vector=input_em, top_k=2, includeMetadata=True)
+
     return result['matches'][0]['metadata']['text'] + "\n" + result['matches'][1]['metadata']['text']
 
 def query_refiner(conversation, query):
