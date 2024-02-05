@@ -21,7 +21,7 @@ pc = Pinecone(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381',environment='gcp-st
 #     pc.create_index(name='my_index', dimension=1536,metric='euclidean',spec=ServerlessSpec(cloud='aws',region='us-west-2'))
 
 
-index = pinecone.Index('ai-assistant')
+index = pc.Index('ai-assistant')
 
 def find_match(input):
     input_em = model.encode(input).tolist()
