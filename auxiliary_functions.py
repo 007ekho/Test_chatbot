@@ -7,6 +7,20 @@ import streamlit as st
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
 pinecone.init(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381', environment='gcp-starter')
+
+import os
+
+from pinecone import Pinecone, ServerlessSpec
+
+
+pc = Pinecone(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381',environment='gcp-starter')
+
+# Now do stuff
+
+# if 'my_index' not in pc.list_indexes().names():
+#     pc.create_index(name='my_index', dimension=1536,metric='euclidean',spec=ServerlessSpec(cloud='aws',region='us-west-2'))
+
+
 index = pinecone.Index('ai-assistant')
 
 def find_match(input):
