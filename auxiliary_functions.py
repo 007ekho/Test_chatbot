@@ -6,7 +6,7 @@ import streamlit as st
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-pinecone.init(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381', environment='gcp-starter')
+# pinecone.init(api_key='db1c8f3b-a76d-4a7a-b476-2937372bb381', environment='gcp-starter')
 
 import os
 
